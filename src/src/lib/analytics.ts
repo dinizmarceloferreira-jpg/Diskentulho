@@ -1,17 +1,10 @@
 export function trackWhatsAppClick(location: string) {
-  if (typeof window !== 'undefined') {
-    if ('gtag' in window) {
-      // @ts-ignore
-      window.gtag('event', 'conversion', {
-        send_to: 'AW-18226966667/tFe3COiH7d8cEIvhpfND',
-        event_category: 'engagement',
-        event_label: location,
-      });
-    }
+  if (typeof window !== 'undefined' && 'gtag' in window) {
     // @ts-ignore
-    if (typeof window.gtag_report_conversion === 'function') {
-      // @ts-ignore
-      window.gtag_report_conversion();
-    }
+    window.gtag('event', 'conversion', {
+      send_to: 'AW-18226966667/AdFMCImG-uMcEIvhpfND',
+      event_category: 'engagement',
+      event_label: location,
+    });
   }
 }

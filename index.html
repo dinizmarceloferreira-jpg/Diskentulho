@@ -9,24 +9,6 @@
       gtag('js', new Date());
 
       gtag('config', 'AW-18226966667');
-
-      // Event snippet for Solicitar cotação conversion action
-      gtag('event', 'conversion', {
-        'send_to': 'AW-18226966667/tFe3COiH7d8cEIvhpfND'
-      });
-
-      function gtag_report_conversion(url) {
-        var callback = function () {
-          if (typeof(url) != 'undefined') {
-            window.location = url;
-          }
-        };
-        gtag('event', 'conversion', {
-            'send_to': 'AW-18226966667/tFe3COiH7d8cEIvhpfND',
-            'event_callback': callback
-        });
-        return false;
-      }
     </script>
 
     <meta charset="UTF-8" />
