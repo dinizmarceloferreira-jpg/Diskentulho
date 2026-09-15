@@ -11,13 +11,13 @@ const STEPS = [
     step: "02",
     icon: Truck,
     title: "Receba a Caçamba",
-    desc: "Nossa equipe posiciona a caçamba no local agendado de forma segura e dentro das normas vigentes.",
+    desc: "Posicionamento da caçamba no local agendado conforme a necessidade da sua obra.",
   },
   {
     step: "03",
     icon: CheckCircle2,
     title: "Coletamos o Entulho",
-    desc: "Após o preenchimento ou ao final do prazo combinado, fazemos a retirada e a destinação correta dos resíduos.",
+    desc: "Após o preenchimento ou ao final do período combinado, realizamos a retirada dos resíduos conforme o serviço contratado.",
   },
 ];
 

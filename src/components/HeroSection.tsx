@@ -27,7 +27,7 @@ export default function HeroSection() {
           <div className="inline-flex items-center gap-2 glass rounded-full px-3 sm:px-4 py-1.5 sm:py-2 mb-6 sm:mb-8 border border-emerald-500/30">
             <div className="w-2 h-2 rounded-full bg-emerald-400 animate-pulse" />
             <span className="text-emerald-300 text-xs sm:text-sm font-semibold">
-              Atendimento em Minas Gerais • Desde 1997
+              Atendimento em Todo o Estado de Minas Gerais
             </span>
           </div>
 

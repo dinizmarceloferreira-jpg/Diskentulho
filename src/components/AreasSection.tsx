@@ -32,6 +32,10 @@ export default function AreasSection() {
           </p>
         </div>
 
+        <p className="text-slate-400 text-xs sm:text-sm font-medium text-center mb-4 sm:mb-6 reveal">
+          Exemplos de cidades atendidas:
+        </p>
+
         <div className="grid grid-cols-2 sm:grid-cols-4 gap-3 sm:gap-4 md:gap-6 max-w-4xl mx-auto mb-10 sm:mb-12">
           {CITIES.map(({ name, highlight }) => (
             <div

@@ -9,10 +9,10 @@ type Reason = {
 };
 
 const REASONS: Reason[] = [
-  { icon: Clock, title: "Entrega Ágil", desc: "Posicionamento e retirada da caçamba alinhados com o cronograma da sua obra." },
-  { icon: DollarSign, title: "Valores Transparentes", desc: "Orçamento claro e discriminado para a locação de sua caçamba, sem taxas escondidas." },
-  { icon: Shield, title: "CNPJ Regularizado", desc: "Empresa constituída sob o CNPJ 01.766.086/0001-20 em atividade regular desde 1997." },
-  { icon: Leaf, title: "Destinação Responsável", desc: "Encaminhamento correto dos resíduos de construção e reformas para locais autorizados." },
+  { icon: Clock, title: "Entrega e Retirada", desc: "Entrega e retirada combinadas conforme a necessidade do serviço." },
+  { icon: DollarSign, title: "Valores Transparentes", desc: "Orçamento claro para a locação da sua caçamba. Consulte as condições para sua cidade." },
+  { icon: Shield, title: "CNPJ Regularizado", desc: "Empresa constituída sob o CNPJ 01.766.086/0001-20 em atividade regular." },
+  { icon: Leaf, title: "Retirada de Resíduos", desc: "Retirada dos resíduos conforme o serviço contratado." },
   { icon: Headphones, title: "Suporte Dedicado", desc: "Atendimento direto via WhatsApp e telefone para consultar disponibilidade e tirar dúvidas." },
   { icon: Truck, title: "Equipamentos Adequados", desc: "Caçambas e veículos apropriados para transporte seguro de entulhos e resíduos." },
 ];
@@ -37,7 +37,7 @@ export default function WhyChooseUs() {
                     <Shield className="w-4 h-4 sm:w-6 sm:h-6 text-emerald-400" />
                   </div>
                   <div>
-                    <p className="font-display font-bold text-white text-xs sm:text-base leading-tight">Desde 1997</p>
+                    <p className="font-display font-bold text-white text-xs sm:text-base leading-tight">Empresa Regular</p>
                     <p className="text-emerald-400 text-[10px] sm:text-xs font-semibold">CNPJ 01.766.086/0001-20</p>
                   </div>
                 </div>
