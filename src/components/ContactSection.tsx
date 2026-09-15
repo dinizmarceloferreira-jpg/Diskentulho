@@ -22,7 +22,7 @@ export default function ContactSection() {
             Solicite seu <span className="gradient-text">Orçamento</span>
           </h2>
           <p className="text-slate-400 text-base sm:text-lg max-w-2xl mx-auto">
-            Preencha o formulário abaixo para enviar diretamente ao nosso WhatsApp. Atendimento rápido e sem compromisso!
+            Preencha o formulário abaixo para preparar sua mensagem no WhatsApp e consulte a disponibilidade para sua cidade.
           </p>
         </div>
 

@@ -36,7 +36,7 @@ export default function Footer() {
           <div className="col-span-2 sm:col-span-1">
             <Logo light size="sm" className="mb-4" />
             <p className="text-slate-400 text-xs sm:text-sm leading-relaxed mb-3">
-              Locação de caçambas de entulho e equipamentos em Itaúna - MG e centro-oeste mineiro.
+              Locação e aluguel de caçambas de entulho em Minas Gerais.
             </p>
             <div className="text-xs text-slate-400 space-y-1 mb-4">
               <p><strong className="text-slate-200">Razão Social:</strong> Itauna Locacao de Equipamentos LTDA</p>

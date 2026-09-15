@@ -4,17 +4,6 @@ import { trackWhatsAppClick } from "../lib/analytics";
 
 const WA_NUMBER = "5531972528564";
 
-const CIDADES = [
-  "Itaúna",
-  "Pará de Minas",
-  "Mateus Leme",
-  "Itatiaiuçu",
-  "Juatuba",
-  "Igarapé",
-  "Divinópolis",
-  "Nova Serrana",
-  "Outra Cidade",
-];
 
 const TAMANHOS = ["3m³", "4m³", "5m³", "Não tenho certeza, preciso de recomendação"];
 
@@ -36,26 +25,20 @@ const inputBase =
 type FormState = {
   nome: string;
   telefone: string;
-  email: string;
   cidade: string;
-  bairro: string;
-  endereco: string;
   tamanho: string;
   tipo: string;
-  data: string;
+  endereco: string;
   info: string;
 };
 
 const initialForm: FormState = {
   nome: "",
   telefone: "",
-  email: "",
   cidade: "",
-  bairro: "",
-  endereco: "",
   tamanho: "",
   tipo: "",
-  data: "",
+  endereco: "",
   info: "",
 };
 
@@ -99,13 +82,10 @@ export default function QuoteForm() {
   const validate = () => {
     const next: Record<string, string> = {};
     if (!form.nome.trim()) next.nome = "Informe seu nome completo.";
-    if (!form.telefone.trim()) next.telefone = "Informe seu telefone / WhatsApp.";
-    if (!form.cidade) next.cidade = "Selecione a cidade.";
-    if (!form.bairro.trim()) next.bairro = "Informe o bairro.";
-    if (!form.endereco.trim()) next.endereco = "Informe o endereço completo.";
+    if (!form.telefone.trim()) next.telefone = "Informe seu WhatsApp / telefone.";
+    if (!form.cidade.trim()) next.cidade = "Informe sua cidade em Minas Gerais.";
     if (!form.tamanho) next.tamanho = "Selecione o tamanho da caçamba.";
-    if (!form.tipo) next.tipo = "Selecione o tipo de resíduo.";
-    if (!lgpd) next.lgpd = "É necessário aceitar a política de privacidade.";
+    if (!lgpd) next.lgpd = "É necessário aceitar os termos para envio do orçamento.";
     return next;
   };
 
@@ -119,24 +99,17 @@ export default function QuoteForm() {
       return;
     }
 
-    const dataFormatada = form.data
-      ? new Date(form.data + "T00:00:00").toLocaleDateString("pt-BR")
-      : "—";
-
     const lines = [
-      "Olá! Gostaria de solicitar um orçamento para locação de caçamba (Diskentulho).",
+      "Olá! Gostaria de solicitar um orçamento para aluguel de caçamba (Diskentulho).",
       "",
-      `*Nome:* ${form.nome}`,
-      `*Telefone:* ${form.telefone}`,
-      `*E-mail:* ${form.email || "—"}`,
-      `*Cidade:* ${form.cidade}`,
-      `*Bairro:* ${form.bairro}`,
-      `*Endereço:* ${form.endereco}`,
+      `*Nome:* ${form.nome.trim()}`,
+      `*WhatsApp:* ${form.telefone.trim()}`,
+      `*Cidade:* ${form.cidade.trim()}`,
       `*Tamanho da Caçamba:* ${form.tamanho}`,
-      `*Tipo de Resíduo:* ${form.tipo}`,
-      `*Data Preferida:* ${dataFormatada}`,
-      `*Informações Adicionais:* ${form.info || "—"}`,
     ];
+    if (form.tipo) lines.push(`*Tipo de Resíduo:* ${form.tipo}`);
+    if (form.endereco.trim()) lines.push(`*Endereço:* ${form.endereco.trim()}`);
+    if (form.info.trim()) lines.push(`*Observação:* ${form.info.trim()}`);
     if (photoPreview) {
       lines.push("", "⚠️ Envie a foto do local/entulho em seguida nesta conversa.");
     }
@@ -162,14 +135,14 @@ export default function QuoteForm() {
           <CheckCircle2 className="w-7 h-7 sm:w-9 sm:h-9 text-emerald-400" />
         </div>
         <h3 className="font-display font-bold text-xl sm:text-2xl text-white mb-3">
-          Solicitação enviada com sucesso!
+          Mensagem preparada no WhatsApp
         </h3>
-        <p className="text-slate-400 text-sm sm:text-base leading-relaxed max-w-md mx-auto mb-6 sm:mb-7">
-          O WhatsApp foi aberto com os seus dados prontos para envio. Nossa equipe em Itaúna responderá rapidamente com a cotação. 🚛
+        <p className="text-slate-300 text-sm sm:text-base leading-relaxed max-w-md mx-auto mb-6 sm:mb-7">
+          O WhatsApp foi aberto com seus dados preenchidos. Confira as informações e toque em enviar para concluir sua solicitação.
         </p>
         <button
           onClick={resetForm}
-          className="inline-flex items-center gap-2 bg-emerald-600 hover:bg-emerald-500 text-white px-6 sm:px-7 py-3 sm:py-3.5 rounded-xl font-semibold text-sm transition-all hover:shadow-lg hover:shadow-emerald-600/30"
+          className="inline-flex items-center gap-2 bg-emerald-600 hover:bg-emerald-500 text-white px-6 sm:px-7 py-3 sm:py-3.5 rounded-xl font-semibold text-sm transition-all hover:shadow-lg hover:shadow-emerald-600/30 cursor-pointer"
         >
           Enviar nova solicitação
         </button>
@@ -210,19 +183,19 @@ export default function QuoteForm() {
       noValidate
       className="bg-slate-950/80 rounded-3xl border border-slate-800 p-4 sm:p-6 md:p-8 shadow-xl space-y-4 sm:space-y-5"
     >
-      <Field name="nome" label="Nome Completo" required error={errors.nome}>
-        <input
-          id="nome"
-          type="text"
-          value={form.nome}
-          onChange={set("nome")}
-          aria-invalid={!!errors.nome}
-          placeholder="Seu nome completo"
-          className={`${inputBase} ${errors.nome ? "border-red-400" : "border-slate-800"}`}
-        />
-      </Field>
-
       <div className="grid sm:grid-cols-2 gap-4 sm:gap-5">
+        <Field name="nome" label="Nome Completo" required error={errors.nome}>
+          <input
+            id="nome"
+            type="text"
+            value={form.nome}
+            onChange={set("nome")}
+            aria-invalid={!!errors.nome}
+            placeholder="Seu nome completo"
+            className={`${inputBase} ${errors.nome ? "border-red-400" : "border-slate-800"}`}
+          />
+        </Field>
+
         <Field name="telefone" label="Telefone / WhatsApp" required error={errors.telefone}>
           <input
             id="telefone"
@@ -234,61 +207,21 @@ export default function QuoteForm() {
             className={`${inputBase} ${errors.telefone ? "border-red-400" : "border-slate-800"}`}
           />
         </Field>
-        <Field name="email" label="E-mail">
-          <input
-            id="email"
-            type="email"
-            value={form.email}
-            onChange={set("email")}
-            placeholder="seu@email.com"
-            className={`${inputBase} border-slate-800`}
-          />
-        </Field>
       </div>
 
       <div className="grid sm:grid-cols-2 gap-4 sm:gap-5">
-        <Field name="cidade" label="Cidade" required error={errors.cidade}>
-          <select
+        <Field name="cidade" label="Cidade em Minas Gerais" required error={errors.cidade}>
+          <input
             id="cidade"
+            type="text"
             value={form.cidade}
             onChange={set("cidade")}
             aria-invalid={!!errors.cidade}
+            placeholder="Ex: Itaúna, Pará de Minas, Betim..."
             className={`${inputBase} ${errors.cidade ? "border-red-400" : "border-slate-800"}`}
-          >
-            <option value="">Selecione a cidade</option>
-            {CIDADES.map((c) => (
-              <option key={c} value={c} className="bg-slate-900 text-white">
-                {c}
-              </option>
-            ))}
-          </select>
-        </Field>
-        <Field name="bairro" label="Bairro" required error={errors.bairro}>
-          <input
-            id="bairro"
-            type="text"
-            value={form.bairro}
-            onChange={set("bairro")}
-            aria-invalid={!!errors.bairro}
-            placeholder="Ex: João Paulo II, Centro..."
-            className={`${inputBase} ${errors.bairro ? "border-red-400" : "border-slate-800"}`}
           />
         </Field>
-      </div>
 
-      <Field name="endereco" label="Endereço Completo de Entrega" required error={errors.endereco}>
-        <input
-          id="endereco"
-          type="text"
-          value={form.endereco}
-          onChange={set("endereco")}
-          aria-invalid={!!errors.endereco}
-          placeholder="Rua, número, ponto de referência"
-          className={`${inputBase} ${errors.endereco ? "border-red-400" : "border-slate-800"}`}
-        />
-      </Field>
-
-      <div className="grid sm:grid-cols-2 gap-4 sm:gap-5">
         <Field name="tamanho" label="Tamanho da Caçamba" required error={errors.tamanho}>
           <select
             id="tamanho"
@@ -305,15 +238,17 @@ export default function QuoteForm() {
             ))}
           </select>
         </Field>
-        <Field name="tipo" label="Tipo de Resíduo" required error={errors.tipo}>
+      </div>
+
+      <div className="grid sm:grid-cols-2 gap-4 sm:gap-5">
+        <Field name="tipo" label="Tipo de Resíduo (opcional)">
           <select
             id="tipo"
             value={form.tipo}
             onChange={set("tipo")}
-            aria-invalid={!!errors.tipo}
-            className={`${inputBase} ${errors.tipo ? "border-red-400" : "border-slate-800"}`}
+            className={`${inputBase} border-slate-800`}
           >
-            <option value="">Selecione o tipo</option>
+            <option value="">Selecione o tipo (opcional)</option>
             {TIPOS.map((t) => (
               <option key={t} value={t} className="bg-slate-900 text-white">
                 {t}
@@ -321,25 +256,26 @@ export default function QuoteForm() {
             ))}
           </select>
         </Field>
+
+        <Field name="endereco" label="Endereço da Obra (opcional)">
+          <input
+            id="endereco"
+            type="text"
+            value={form.endereco}
+            onChange={set("endereco")}
+            placeholder="Rua, número ou ponto de referência (opcional)"
+            className={`${inputBase} border-slate-800`}
+          />
+        </Field>
       </div>
 
-      <Field name="data" label="Data Preferida para Entrega">
-        <input
-          id="data"
-          type="date"
-          value={form.data}
-          onChange={set("data")}
-          className={`${inputBase} border-slate-800`}
-        />
-      </Field>
-
-      <Field name="info" label="Informações Adicionais">
+      <Field name="info" label="Observações adicionais (opcional)">
         <textarea
           id="info"
-          rows={3}
+          rows={2}
           value={form.info}
           onChange={set("info")}
-          placeholder="Detalhes adicionais: volume aproximado, acesso do caminhão, restrições..."
+          placeholder="Algum detalhe adicional sobre o local, acesso do caminhão ou resíduos..."
           className={`${inputBase} border-slate-800 resize-none`}
         />
       </Field>
@@ -350,11 +286,11 @@ export default function QuoteForm() {
         </label>
         {photoPreview ? (
           <div className="relative rounded-xl overflow-hidden border border-slate-800 inline-block">
-            <img src={photoPreview} alt="Pré-visualização" className="h-28 sm:h-32 w-auto object-cover" />
+            <img src={photoPreview} alt="Pré-visualização" className="h-24 sm:h-28 w-auto object-cover" />
             <button
               type="button"
               onClick={removePhoto}
-              className="absolute top-2 right-2 w-7 h-7 rounded-full bg-black/60 hover:bg-black/80 text-white flex items-center justify-center transition-colors"
+              className="absolute top-2 right-2 w-7 h-7 rounded-full bg-black/60 hover:bg-black/80 text-white flex items-center justify-center transition-colors cursor-pointer"
               aria-label="Remover foto"
             >
               <X className="w-4 h-4" />
@@ -364,12 +300,12 @@ export default function QuoteForm() {
           <button
             type="button"
             onClick={() => fileRef.current?.click()}
-            className="w-full flex flex-col items-center justify-center gap-2 py-5 sm:py-6 rounded-xl border-2 border-dashed border-slate-800 hover:border-emerald-500 hover:bg-slate-900/50 transition-all text-slate-400 hover:text-emerald-400"
+            className="w-full flex flex-col items-center justify-center gap-2 py-4 sm:py-5 rounded-xl border-2 border-dashed border-slate-800 hover:border-emerald-500 hover:bg-slate-900/50 transition-all text-slate-400 hover:text-emerald-400 cursor-pointer"
           >
-            <div className="w-9 h-9 sm:w-10 sm:h-10 rounded-full bg-slate-900 flex items-center justify-center">
+            <div className="w-8 h-8 sm:w-9 sm:h-9 rounded-full bg-slate-900 flex items-center justify-center">
               <ImageIcon className="w-4 h-4 sm:w-5 sm:h-5 text-emerald-400" />
             </div>
-            <span className="text-xs sm:text-sm font-medium">Clique para anexar uma foto</span>
+            <span className="text-xs sm:text-sm font-medium">Anexar foto do local ou resíduo (opcional)</span>
             <span className="text-[10px] sm:text-xs text-slate-500">JPG ou PNG • até 10MB</span>
           </button>
         )}
@@ -418,7 +354,7 @@ export default function QuoteForm() {
 
       <button
         type="submit"
-        className="w-full flex items-center justify-center gap-2 sm:gap-3 bg-emerald-600 hover:bg-emerald-500 text-white px-6 sm:px-8 py-3.5 sm:py-4 rounded-xl font-bold text-sm sm:text-base transition-all hover:shadow-lg hover:shadow-emerald-600/30"
+        className="w-full flex items-center justify-center gap-2 sm:gap-3 bg-emerald-600 hover:bg-emerald-500 text-white px-6 sm:px-8 py-3.5 sm:py-4 rounded-xl font-bold text-sm sm:text-base transition-all hover:shadow-lg hover:shadow-emerald-600/30 cursor-pointer"
       >
         <Send className="w-4 h-4 sm:w-5 sm:h-5" />
         Solicitar Orçamento pelo WhatsApp
@@ -426,7 +362,7 @@ export default function QuoteForm() {
 
       <div className="flex items-center justify-center gap-2 text-[10px] sm:text-xs text-slate-400">
         <ShieldCheck className="w-3.5 h-3.5 sm:w-4 sm:h-4 text-emerald-400" />
-        Seus dados estão seguros. Sem compromisso ou taxas ocultas.
+        Seus dados serão utilizados para atendimento e envio do orçamento.
       </div>
     </form>
   );

@@ -36,7 +36,7 @@ const SERVICES: Service[] = [
     icon: TreePine,
     image: imgTerreno,
     title: "Limpeza de Terreno",
-    description: "Caçambas para limpeza de terrenos baldios, podas de árvores e remoção de vegetação em Itaúna e região.",
+    description: "Caçambas para limpeza de terrenos baldios, podas de árvores e remoção de vegetação em cidades de Minas Gerais.",
     items: ["Podas e Galhos", "Terra e Pedras", "Vegetação Seca", "Limpeza Geral"],
   },
   {
@@ -57,11 +57,10 @@ export default function ServicesSection() {
             Nossos Serviços
           </span>
           <h2 className="font-display font-extrabold text-2xl sm:text-4xl md:text-5xl text-white mb-4">
-            Soluções Completas em{" "}
-            <span className="gradient-text">Caçambas</span>
+            Aluguel de <span className="gradient-text">Caçambas</span> para Obras e Reformas
           </h2>
-          <p className="text-slate-400 text-base sm:text-lg max-w-2xl mx-auto">
-            Oferecemos caçambas para todos os tipos de resíduos em Itaúna - MG e região, com entrega ágil e preço justo.
+          <p className="text-slate-300 text-base sm:text-lg max-w-3xl mx-auto leading-relaxed">
+            Faça a locação de uma caçamba de entulho para sua obra, reforma, demolição ou limpeza. Trabalhamos com diferentes tamanhos de caçambas e atendemos clientes em cidades de Minas Gerais.
           </p>
         </div>
 
@@ -110,10 +109,10 @@ export default function ServicesSection() {
           <div className="relative flex flex-col sm:flex-row items-center gap-6 sm:gap-8 text-center sm:text-left">
             <div className="flex-1">
               <h3 className="font-display font-bold text-xl sm:text-2xl md:text-3xl text-white mb-3">
-                Precisa de uma caçamba em Itaúna ou região?
+                Precisa de caçamba para sua obra em Minas Gerais?
               </h3>
               <p className="text-slate-300 text-base sm:text-lg">
-                Solicite seu orçamento sem compromisso pelo WhatsApp. Respondemos rapidamente!
+                Solicite seu orçamento pelo WhatsApp e consulte a disponibilidade para sua cidade.
               </p>
             </div>
             <a

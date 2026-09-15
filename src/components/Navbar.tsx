@@ -62,7 +62,7 @@ export default function Navbar() {
               className="hidden sm:flex items-center gap-2 bg-emerald-600 hover:bg-emerald-500 text-white px-4 sm:px-5 py-2 sm:py-2.5 rounded-xl text-xs sm:text-sm font-semibold transition-all hover:shadow-lg hover:shadow-emerald-600/30"
             >
               <Phone className="w-4 h-4" />
-              <span>Orçamento Grátis</span>
+              <span>Solicitar Orçamento</span>
             </a>
 
             {!scrolled && (
@@ -117,7 +117,7 @@ export default function Navbar() {
             className="flex items-center justify-center gap-2 bg-emerald-600 text-white px-5 py-3 rounded-xl text-sm font-semibold mt-2"
           >
             <Phone className="w-4 h-4" />
-            Solicitar Orçamento Grátis
+            Solicitar Orçamento
           </a>
         </div>
       </div>

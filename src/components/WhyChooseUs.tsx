@@ -9,11 +9,11 @@ type Reason = {
 };
 
 const REASONS: Reason[] = [
-  { icon: Clock, title: "Entrega Ágil", desc: "Posicionamento e retirada da caçamba alinhados com o cronograma da sua obra em Itaúna." },
-  { icon: DollarSign, title: "Preço Justo", desc: "Valores transparentes sem taxas escondidas. O melhor custo-benefício da região." },
+  { icon: Clock, title: "Entrega Ágil", desc: "Posicionamento e retirada da caçamba alinhados com o cronograma da sua obra." },
+  { icon: DollarSign, title: "Valores Transparentes", desc: "Orçamento claro e discriminado para a locação de sua caçamba, sem taxas escondidas." },
   { icon: Shield, title: "CNPJ Regularizado", desc: "Empresa constituída sob o CNPJ 01.766.086/0001-20 em atividade regular desde 1997." },
   { icon: Leaf, title: "Destinação Responsável", desc: "Encaminhamento correto dos resíduos de construção e reformas para locais autorizados." },
-  { icon: Headphones, title: "Suporte Dedicado", desc: "Atendimento direto e personalizado via WhatsApp e telefone com agilidade." },
+  { icon: Headphones, title: "Suporte Dedicado", desc: "Atendimento direto via WhatsApp e telefone para consultar disponibilidade e tirar dúvidas." },
   { icon: Truck, title: "Equipamentos Adequados", desc: "Caçambas e veículos apropriados para transporte seguro de entulhos e resíduos." },
 ];
 
@@ -27,7 +27,7 @@ export default function WhyChooseUs() {
               <div className="absolute -inset-4 bg-emerald-500/10 rounded-3xl blur-2xl" />
               <img
                 src={serviceImg}
-                alt="Equipamentos de locação e caçambas - Diskentulho Itaúna"
+                alt="Equipamentos de locação e caçambas - Diskentulho"
                 className="relative rounded-3xl shadow-2xl shadow-black/40 w-full h-auto object-cover h-[340px] sm:h-[420px]"
                 loading="lazy"
               />
@@ -55,7 +55,7 @@ export default function WhyChooseUs() {
                 <span className="gradient-text">Obra Merece</span>
               </h2>
               <p className="text-slate-300 text-base sm:text-lg mb-8 sm:mb-10">
-                Aproximadamente 29 anos de tradição e atuação contínua no segmento de locação de equipamentos e caçambas em Itaúna e centro-oeste mineiro.
+                Tradição e atuação contínua no segmento de locação de equipamentos e caçambas em cidades de Minas Gerais.
               </p>
             </div>
 

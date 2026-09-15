@@ -1,10 +1,10 @@
 import { Award, Shield, MapPin, MessageSquare } from "lucide-react";
 
 const STATS = [
-  { icon: Award, value: "29 Anos", label: "De Atuação (Desde 1997)" },
-  { icon: Shield, value: "Desde 1997", label: "CNPJ 01.766.086/0001-20" },
-  { icon: MapPin, value: "Itaúna - MG", label: "Sede & Região Atendida" },
-  { icon: MessageSquare, value: "Direto", label: "Atendimento via WhatsApp" },
+  { icon: Award, value: "29 Anos", label: "De Atuação no Mercado" },
+  { icon: Shield, value: "Empresa Regular", label: "CNPJ 01.766.086/0001-20" },
+  { icon: MapPin, value: "Minas Gerais", label: "Atendimento no Estado" },
+  { icon: MessageSquare, value: "WhatsApp", label: "Solicite seu Orçamento" },
 ];
 
 export default function TrustIndicators() {

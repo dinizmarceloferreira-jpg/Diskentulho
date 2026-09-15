@@ -27,26 +27,25 @@ export default function HeroSection() {
           <div className="inline-flex items-center gap-2 glass rounded-full px-3 sm:px-4 py-1.5 sm:py-2 mb-6 sm:mb-8 border border-emerald-500/30">
             <div className="w-2 h-2 rounded-full bg-emerald-400 animate-pulse" />
             <span className="text-emerald-300 text-xs sm:text-sm font-semibold">
-              29 Anos de Mercado • Atendimento Rápido
+              Atendimento em Minas Gerais • Desde 1997
             </span>
           </div>
 
           {/* Headline */}
           <h1 className="font-display font-extrabold text-3xl sm:text-5xl md:text-6xl lg:text-7xl text-white leading-[1.08] mb-5 sm:mb-6 tracking-tight drop-shadow-md">
-            Locação de{" "}
+            Aluguel de{" "}
             <span className="gradient-text">Caçambas</span>
             <br />
-            de Entulho
+            de Entulho em Minas Gerais
           </h1>
 
           {/* Subheadline */}
-          <p className="text-base sm:text-xl text-slate-200 max-w-xl mb-8 sm:mb-10 leading-relaxed font-light drop-shadow-sm">
-            Solução profissional para descarte de entulhos e resíduos de obras em <strong className="text-white font-semibold">Itaúna - MG e região</strong>.
-            Tradição, preço justo e compromisso com o descarte correto desde 1997.
+          <p className="text-base sm:text-xl text-slate-200 max-w-xl mb-6 sm:mb-8 leading-relaxed font-light drop-shadow-sm">
+            Caçambas para obras, reformas e descarte de entulho. Solicite seu orçamento pelo WhatsApp e consulte a disponibilidade para sua cidade.
           </p>
 
           {/* CTA Buttons */}
-          <div className="flex flex-col sm:flex-row gap-3 sm:gap-4 mb-10 sm:mb-16">
+          <div className="flex flex-col sm:flex-row gap-3 sm:gap-4 mb-3 sm:mb-4">
             <a
               href={WA_LINK}
               target="_blank"
@@ -57,7 +56,7 @@ export default function HeroSection() {
               <svg className="w-5 h-5 sm:w-6 sm:h-6" viewBox="0 0 24 24" fill="currentColor">
                 <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15.1.04-.337.52-.149.174.198-.298.497-.174.198-.298.497-.099.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893a11.821 11.821 0 00-3.48-8.413z" />
               </svg>
-              Solicitar Orçamento
+              Solicitar orçamento pelo WhatsApp
               <ArrowRight className="w-4 h-4 sm:w-5 sm:h-5 group-hover:translate-x-1 transition-transform" />
             </a>
             <a
@@ -68,11 +67,16 @@ export default function HeroSection() {
             </a>
           </div>
 
+          <p className="text-emerald-300/90 text-xs sm:text-sm font-medium mb-8 sm:mb-12 flex items-center gap-2">
+            <span className="w-1.5 h-1.5 rounded-full bg-emerald-400 inline-block" />
+            Atendimento em todo o estado de Minas Gerais.
+          </p>
+
           {/* Trust Pills */}
           <div className="flex flex-wrap gap-2 sm:gap-3">
             {[
               { icon: Shield, text: "CNPJ 01.766.086/0001-20" },
-              { icon: Clock, text: "Entrega e Retirada Ágeis" },
+              { icon: Clock, text: "Entrega e retirada" },
               { icon: Truck, text: "Caçambas 3m³, 4m³ e 5m³" },
             ].map(({ icon: Icon, text }) => (
               <div key={text} className="flex items-center gap-1.5 sm:gap-2 glass rounded-full px-3 sm:px-4 py-1.5 sm:py-2 border border-slate-800">

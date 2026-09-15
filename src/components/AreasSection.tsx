@@ -24,8 +24,11 @@ export default function AreasSection() {
           <h2 className="font-display font-extrabold text-2xl sm:text-4xl md:text-5xl text-white mb-4">
             Onde <span className="gradient-text">Atuamos</span>
           </h2>
-          <p className="text-slate-400 text-base sm:text-lg max-w-2xl mx-auto">
-            Atendemos a cidade de Itaúna - MG e principais municípios do entorno com agilidade e tradição.
+          <p className="text-slate-300 text-base sm:text-lg max-w-2xl mx-auto font-medium">
+            Atendimento em todo o estado de Minas Gerais.
+          </p>
+          <p className="text-slate-400 text-sm sm:text-base max-w-xl mx-auto mt-1">
+            Consulte a disponibilidade para sua cidade.
           </p>
         </div>
 
@@ -89,7 +92,7 @@ export default function AreasSection() {
         <div className="text-center mt-6 sm:mt-8 reveal">
           <div className="inline-flex items-center gap-2 text-slate-400 text-xs sm:text-sm">
             <CheckCircle2 className="w-4 h-4 text-emerald-400" />
-            Sua localização não está na lista? Entre em contato e consulte a disponibilidade para sua região.
+            Consulte a disponibilidade e prazos para a sua cidade pelo WhatsApp.
           </div>
         </div>
       </div>

@@ -20,15 +20,15 @@ const FAQS = [
   },
   {
     q: "A empresa possui CNPJ ativo e registro oficial?",
-    a: "Sim! Operamos com a Razão Social Itauna Locacao de Equipamentos LTDA (CNPJ: 01.766.086/0001-20, Inscrição Estadual: 338263385.00-02). Atuamos com registro oficial e atividade regular desde 04/04/1997 (aproximadamente 29 anos de mercado) em Itaúna - MG e região.",
+    a: "Sim! Operamos com a Razão Social Itauna Locacao de Equipamentos LTDA (CNPJ: 01.766.086/0001-20, Inscrição Estadual: 338263385.00-02). Atuamos com registro oficial e atividade regular desde 04/04/1997 (aproximadamente 29 anos de mercado) em Minas Gerais.",
   },
   {
     q: "Como solicitar uma caçamba?",
-    a: "É muito simples! Entre em contato diretamente pelo WhatsApp (31) 97252-8564 informando o endereço da entrega em Itaúna ou região e o tipo de entulho. Retornamos rapidamente para confirmar o envio.",
+    a: "É muito simples! Entre em contato diretamente pelo WhatsApp (31) 97252-8564 informando sua cidade em Minas Gerais, o endereço e o tipo de entulho. Solicite seu orçamento pelo WhatsApp para confirmar a disponibilidade.",
   },
   {
     q: "Qual o valor da locação?",
-    a: "O valor é calculado de acordo com o tamanho da caçamba solicitada e a localização da entrega. Solicite um orçamento sem compromisso via WhatsApp para receber a cotação exata.",
+    a: "O valor é calculado de acordo com o tamanho da caçamba solicitada e a localização da entrega. Solicite um orçamento via WhatsApp para receber a cotação exata.",
   },
   {
     q: "Vocês trabalham aos finais de semana?",

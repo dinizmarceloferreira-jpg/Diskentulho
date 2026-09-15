@@ -5,7 +5,7 @@ const STEPS = [
     step: "01",
     icon: MessageSquare,
     title: "Solicite pelo WhatsApp",
-    desc: "Informe o endereço da obra em Itaúna ou região, o tipo de entulho e escolha o tamanho da caçamba ideal.",
+    desc: "Informe a cidade e endereço da obra em Minas Gerais, o tipo de entulho e escolha o tamanho ideal da caçamba.",
   },
   {
     step: "02",
