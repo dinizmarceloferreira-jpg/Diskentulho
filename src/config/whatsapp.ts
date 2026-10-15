@@ -1,4 +1,4 @@
-// Configuração centralizada do WhatsApp para a JP Entulho
+// Configuração centralizada do WhatsApp para a Disk Caçamba Goiás
 // Quando o novo número oficial DDD 62 estiver disponível, altere apenas WHATSAPP_NUMBER e WHATSAPP_DISPLAY aqui.
 
 export const WHATSAPP_NUMBER = "5531972528564";

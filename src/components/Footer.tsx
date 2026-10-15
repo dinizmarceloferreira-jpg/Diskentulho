@@ -41,7 +41,6 @@ export default function Footer() {
             </p>
             <div className="text-xs text-slate-400 space-y-1 mb-4">
               <p><strong className="text-slate-200">Nome Comercial:</strong> {COMPANY_DATA.tradeName}</p>
-              <p><strong className="text-slate-200">Razão Social:</strong> {COMPANY_DATA.legalName}</p>
               <p><strong className="text-slate-200">CNPJ:</strong> {COMPANY_DATA.cnpj}</p>
             </div>
             <a
@@ -96,10 +95,9 @@ export default function Footer() {
                 <MapPin className="w-4 h-4 text-emerald-400 mt-0.5 flex-shrink-0" />
                 <div className="text-slate-300 text-xs sm:text-sm leading-relaxed space-y-0.5">
                   <p className="font-semibold text-white">{COMPANY_DATA.tradeName}</p>
-                  <p>{COMPANY_DATA.legalName}</p>
                   <p>CNPJ {COMPANY_DATA.cnpj}</p>
                   <p>{COMPANY_DATA.address.street}</p>
-                  <p>{COMPANY_DATA.address.neighborhood}</p>
+                  {COMPANY_DATA.address.neighborhood && <p>{COMPANY_DATA.address.neighborhood}</p>}
                   <p>{COMPANY_DATA.address.city} - {COMPANY_DATA.address.uf}</p>
                   <p>CEP {COMPANY_DATA.address.cep}</p>
                 </div>
@@ -126,7 +124,7 @@ export default function Footer() {
 
         <div className="border-t border-slate-800 pt-6 sm:pt-8 flex flex-col sm:flex-row items-center justify-between gap-3 sm:gap-4">
           <p className="text-slate-400 text-xs sm:text-sm text-center sm:text-left">
-            © {new Date().getFullYear()} {COMPANY_DATA.tradeName} — {COMPANY_DATA.legalName} (CNPJ {COMPANY_DATA.cnpj}). Todos os direitos reservados.
+            © {new Date().getFullYear()} {COMPANY_DATA.tradeName} (CNPJ {COMPANY_DATA.cnpj}). Todos os direitos reservados.
           </p>
           <div className="flex items-center gap-4">
             <button

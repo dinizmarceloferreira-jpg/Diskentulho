@@ -137,7 +137,7 @@ export default function QuoteForm() {
           Mensagem preparada no WhatsApp
         </h3>
         <p className="text-slate-300 text-sm sm:text-base leading-relaxed max-w-md mx-auto mb-6 sm:mb-7">
-          O WhatsApp foi aberto com os seus dados prontos para a equipe da JP Entulho em Goiânia. Toque em enviar no aplicativo para concluir sua cotação.
+          O WhatsApp foi aberto com os seus dados prontos para a equipe da Disk Caçamba Goiás em Goiânia. Toque em enviar no aplicativo para concluir sua cotação.
         </p>
         <button
           onClick={resetForm}

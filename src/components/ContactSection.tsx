@@ -24,7 +24,7 @@ export default function ContactSection() {
             Solicite seu <span className="gradient-text">Orçamento</span>
           </h2>
           <p className="text-slate-400 text-base sm:text-lg max-w-2xl mx-auto">
-            Preencha o formulário para preparar sua mensagem no WhatsApp e solicite atendimento rápido com a JP Entulho em Goiânia e região.
+            Preencha o formulário para preparar sua mensagem no WhatsApp e solicite atendimento rápido com a Disk Caçamba Goiás em Goiânia e região.
           </p>
         </div>
 

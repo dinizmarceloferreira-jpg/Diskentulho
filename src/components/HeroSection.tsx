@@ -12,7 +12,7 @@ export default function HeroSection() {
       <div className="absolute inset-0">
         <img
           src={heroBg}
-          alt="Canteiro de obras com caçambas de entulho - JP Entulho Goiânia"
+          alt="Canteiro de obras com caçambas de entulho - Disk Caçamba Goiás"
           className="w-full h-full object-cover object-center"
           loading="eager"
         />

@@ -53,7 +53,7 @@ export default function FAQSection() {
             Dúvidas <span className="gradient-text">Frequentes</span>
           </h2>
           <p className="text-slate-400 text-lg">
-            Esclareça suas principais dúvidas sobre o aluguel de caçambas com a JP Entulho em Goiânia.
+            Esclareça suas principais dúvidas sobre o aluguel de caçambas com a Disk Caçamba Goiás em Goiânia.
           </p>
         </div>
 

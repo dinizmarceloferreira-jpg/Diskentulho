@@ -26,7 +26,7 @@ export default function Logo({ light = false, size = "md", className = "" }: Log
       </div>
       <div className="flex flex-col leading-none">
         <span className={light ? "text-white" : "text-slate-900"}>
-          JP <span className="text-emerald-500">ENTULHO</span>
+          DISK CAÇAMBA <span className="text-emerald-500">GOIÁS</span>
         </span>
         <span className="text-[9px] sm:text-[10px] tracking-widest uppercase font-semibold text-emerald-400 mt-0.5">
           GOIÂNIA • GO

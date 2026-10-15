@@ -1,17 +1,17 @@
-// Dados cadastrais e operacionais oficiais da JP Entulho
+// Dados cadastrais e operacionais oficiais da Disk Caçamba Goiás
 
 export const COMPANY_DATA = {
-  tradeName: "JP Entulho",
-  legalName: "JP Entulho Ltda",
-  cnpj: "01.482.318/0001-19",
+  tradeName: "Disk Caçamba Goiás",
+  legalName: "Disk Caçamba Goiás",
+  cnpj: "20.911.942/0001-39",
   address: {
-    street: "Rua Valença, 50, Quadra 115, Lote 06",
-    neighborhood: "Setor Leste Universitário",
+    street: "Rua Joanna Antônia do Desterro, 16, Qd. 23, Lt. 01",
+    neighborhood: "",
     city: "Goiânia",
     state: "Goiás",
     uf: "GO",
-    cep: "74615-280",
-    full: "Rua Valença, 50, Quadra 115, Lote 06, Setor Leste Universitário, Goiânia - GO, CEP 74615-280",
+    cep: "74735-583",
+    full: "Rua Joanna Antônia do Desterro, 16, Qd. 23, Lt. 01, Goiânia - GO, CEP 74735-583",
   },
   ddd: "62",
   serviceAreas: [

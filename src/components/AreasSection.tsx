@@ -1,7 +1,7 @@
 import { MapPin, CheckCircle2, Navigation, ExternalLink } from "lucide-react";
 import { COMPANY_DATA } from "../config/company";
 
-const MAPS_NAVIGATE_URL = "https://www.google.com/maps/search/?api=1&query=Rua+Valen%C3%A7a,+50,+Setor+Leste+Universit%C3%A1rio,+Goi%C3%A2nia+-+GO,+74615-280";
+const MAPS_NAVIGATE_URL = "https://www.google.com/maps/search/?api=1&query=Rua+Joanna+Ant%C3%B4nia+do+Desterro,+16,+Goi%C3%A2nia+-+GO,+74735-583";
 
 export default function AreasSection() {
   return (
@@ -48,8 +48,8 @@ export default function AreasSection() {
         <div className="reveal max-w-4xl mx-auto rounded-3xl overflow-hidden border border-slate-800 bg-slate-900 shadow-2xl">
           <div className="relative w-full h-64 sm:h-80 md:h-96">
             <iframe
-              title="Mapa de Atendimento JP Entulho - Goiânia GO"
-              src="https://maps.google.com/maps?q=Rua%20Valen%C3%A7a%2C%2050%2C%20Setor%20Leste%20Universit%C3%A1rio%2C%20Goi%C3%A2nia%20-%20GO%2C%2074615-280&t=&z=15&ie=UTF8&iwloc=&output=embed"
+              title="Mapa de Atendimento Disk Caçamba Goiás - Goiânia GO"
+              src="https://maps.google.com/maps?q=Rua%20Joanna%20Ant%C3%B4nia%20do%20Desterro%2C%2016%2C%20Goi%C3%A2nia%20-%20GO%2C%2074735-583&t=&z=15&ie=UTF8&iwloc=&output=embed"
               className="w-full h-full border-0 grayscale contrast-125 brightness-90"
               loading="lazy"
             />
@@ -60,7 +60,7 @@ export default function AreasSection() {
                   <Navigation className="w-4 h-4" />
                 </div>
                 <div>
-                  <h4 className="font-bold text-xs sm:text-sm text-white">Sede Oficial JP Entulho</h4>
+                  <h4 className="font-bold text-xs sm:text-sm text-white">Sede Oficial Disk Caçamba Goiás</h4>
                   <p className="text-slate-400 text-[11px] sm:text-xs leading-relaxed mt-0.5">
                     {COMPANY_DATA.address.full}
                   </p>

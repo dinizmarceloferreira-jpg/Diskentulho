@@ -28,7 +28,7 @@ export default function WhyChooseUs() {
               <div className="absolute -inset-4 bg-emerald-500/10 rounded-3xl blur-2xl" />
               <img
                 src={serviceImg}
-                alt="Equipamentos de locação e caçambas - JP Entulho Goiânia"
+                alt="Equipamentos de locação e caçambas - Disk Caçamba Goiás"
                 className="relative rounded-3xl shadow-2xl shadow-black/40 w-full h-auto object-cover h-[340px] sm:h-[420px]"
                 loading="lazy"
               />
