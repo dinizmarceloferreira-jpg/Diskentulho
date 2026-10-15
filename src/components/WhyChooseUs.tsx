@@ -1,5 +1,6 @@
 import { Clock, DollarSign, Shield, Leaf, Headphones, Truck } from "lucide-react";
 import type { ComponentType } from "react";
+import { COMPANY_DATA } from "../config/company";
 import serviceImg from "../assets/why_choose_us.jpg";
 
 type Reason = {
@@ -9,12 +10,12 @@ type Reason = {
 };
 
 const REASONS: Reason[] = [
-  { icon: Clock, title: "Entrega e Retirada", desc: "Entrega e retirada combinadas conforme a necessidade do serviço." },
-  { icon: DollarSign, title: "Valores Transparentes", desc: "Orçamento claro para a locação da sua caçamba. Consulte as condições para sua cidade." },
-  { icon: Shield, title: "CNPJ Regularizado", desc: "Empresa constituída sob o CNPJ 01.766.086/0001-20 em atividade regular." },
-  { icon: Leaf, title: "Retirada de Resíduos", desc: "Retirada dos resíduos conforme o serviço contratado." },
-  { icon: Headphones, title: "Suporte Dedicado", desc: "Atendimento direto via WhatsApp e telefone para consultar disponibilidade e tirar dúvidas." },
-  { icon: Truck, title: "Equipamentos Adequados", desc: "Caçambas e veículos apropriados para transporte seguro de entulhos e resíduos." },
+  { icon: Clock, title: "Entrega e Retirada", desc: "Entrega e retirada combinadas com agilidade conforme o cronograma da sua obra." },
+  { icon: DollarSign, title: "Valores Transparentes", desc: "Orçamento claro e justo para locação de caçamba em Goiânia e região metropolitana." },
+  { icon: Shield, title: "CNPJ Regularizado", desc: `Empresa constituída sob o CNPJ ${COMPANY_DATA.cnpj} com registro oficial em atividade.` },
+  { icon: Leaf, title: "Retirada de Resíduos", desc: "Descarte responsável e transporte seguro de entulhos de obras e reformas." },
+  { icon: Headphones, title: "Atendimento Ágil", desc: "Suporte direto via WhatsApp para consultar disponibilidade, prazos e tirar dúvidas." },
+  { icon: Truck, title: "Equipamentos Adequados", desc: "Caçambas nos tamanhos ideais e veículos adequados para entregas com segurança." },
 ];
 
 export default function WhyChooseUs() {
@@ -27,7 +28,7 @@ export default function WhyChooseUs() {
               <div className="absolute -inset-4 bg-emerald-500/10 rounded-3xl blur-2xl" />
               <img
                 src={serviceImg}
-                alt="Equipamentos de locação e caçambas - Diskentulho"
+                alt="Equipamentos de locação e caçambas - JP Entulho Goiânia"
                 className="relative rounded-3xl shadow-2xl shadow-black/40 w-full h-auto object-cover h-[340px] sm:h-[420px]"
                 loading="lazy"
               />
@@ -38,7 +39,7 @@ export default function WhyChooseUs() {
                   </div>
                   <div>
                     <p className="font-display font-bold text-white text-xs sm:text-base leading-tight">Empresa Regular</p>
-                    <p className="text-emerald-400 text-[10px] sm:text-xs font-semibold">CNPJ 01.766.086/0001-20</p>
+                    <p className="text-emerald-400 text-[10px] sm:text-xs font-semibold">CNPJ {COMPANY_DATA.cnpj}</p>
                   </div>
                 </div>
               </div>
@@ -55,7 +56,7 @@ export default function WhyChooseUs() {
                 <span className="gradient-text">Obra Merece</span>
               </h2>
               <p className="text-slate-300 text-base sm:text-lg mb-8 sm:mb-10">
-                Tradição e atuação contínua no segmento de locação de equipamentos e caçambas em cidades de Minas Gerais.
+                Atuação séria e transparente na locação de caçambas e retirada de entulho em Goiânia e cidades da região metropolitana.
               </p>
             </div>
 

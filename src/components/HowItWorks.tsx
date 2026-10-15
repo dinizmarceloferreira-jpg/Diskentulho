@@ -5,19 +5,19 @@ const STEPS = [
     step: "01",
     icon: MessageSquare,
     title: "Solicite pelo WhatsApp",
-    desc: "Informe a cidade e endereço da obra em Minas Gerais, o tipo de entulho e escolha o tamanho ideal da caçamba.",
+    desc: "Informe o endereço da sua obra em Goiânia ou região, o tipo de entulho e escolha o tamanho ideal da caçamba.",
   },
   {
     step: "02",
     icon: Truck,
     title: "Receba a Caçamba",
-    desc: "Posicionamento da caçamba no local agendado conforme a necessidade da sua obra.",
+    desc: "Posicionamento da caçamba no local agendado com agilidade conforme a necessidade da sua obra.",
   },
   {
     step: "03",
     icon: CheckCircle2,
     title: "Coletamos o Entulho",
-    desc: "Após o preenchimento ou ao final do período combinado, realizamos a retirada dos resíduos conforme o serviço contratado.",
+    desc: "Após o preenchimento ou término do período combinado, realizamos a retirada e destinação correta dos resíduos.",
   },
 ];
 
@@ -33,7 +33,7 @@ export default function HowItWorks() {
             Como <span className="gradient-text">Funciona</span>
           </h2>
           <p className="text-slate-400 text-base sm:text-lg max-w-2xl mx-auto">
-            Processo simples e sem burocracia para alugar sua caçamba de entulho.
+            Processo simples, rápido e sem burocracia para alugar sua caçamba de entulho em Goiânia.
           </p>
         </div>
 

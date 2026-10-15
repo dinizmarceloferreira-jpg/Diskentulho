@@ -4,39 +4,40 @@ import {
   AccordionItem,
   AccordionTrigger,
 } from "./ui/Accordion";
+import { COMPANY_DATA } from "../config/company";
 
 const FAQS = [
   {
     q: "Qual o tamanho da caçamba?",
-    a: "Trabalhamos com caçambas de 3m³, 4m³ e 5m³. A mais utilizada para reformas residenciais e pequenas obras é a de 5m³. Nossa equipe orienta na escolha do tamanho ideal para seu volume de resíduos.",
+    a: "Trabalhamos com caçambas de 3m³, 4m³ e 5m³. A mais utilizada para reformas residenciais e obras é a de 5m³. Nossa equipe orienta na escolha do tamanho ideal para o volume de entulho da sua obra em Goiânia.",
   },
   {
     q: "Quanto tempo posso ficar com a caçamba?",
-    a: "O período padrão de permanência varia conforme o combinado no ato da contratação (geralmente de 3 a 5 dias úteis). Caso sua obra necessite de tempo adicional, realizamos a extensão mediante ajuste prévio.",
+    a: "O período padrão varia conforme o combinado na contratação (geralmente de 3 a 5 dias). Caso sua obra necessite de prazo adicional, realizamos a extensão com total flexibilidade.",
   },
   {
     q: "O que pode ser colocado na caçamba?",
-    a: "Resíduos de construção civil como concreto, tijolos, cerâmica, argamassa, madeira, ferragens, terra e pedras. É estritamente proibido o descarte de lixo doméstico orgânico, materiais perigosos, produtos químicos, pneus ou lixo hospitalar.",
+    a: "Resíduos de construção civil como concreto, tijolos, cerâmica, argamassa, madeira, ferragens, terra, pedras e restos de podas. É estritamente proibido o descarte de lixo doméstico orgânico, produtos químicos, pneus ou lixo hospitalar.",
   },
   {
     q: "A empresa possui CNPJ ativo e registro oficial?",
-    a: "Sim! Operamos com a Razão Social Itauna Locacao de Equipamentos LTDA (CNPJ: 01.766.086/0001-20, Inscrição Estadual: 338263385.00-02). Atuamos com registro oficial e atividade regular desde 04/04/1997 (aproximadamente 29 anos de mercado) em Minas Gerais.",
+    a: `Sim! Operamos com a Razão Social ${COMPANY_DATA.legalName} (CNPJ: ${COMPANY_DATA.cnpj}). Atuamos com registro oficial e atividade regular em Goiânia - GO e região metropolitana.`,
   },
   {
     q: "Como solicitar uma caçamba?",
-    a: "É muito simples! Entre em contato diretamente pelo WhatsApp (31) 97252-8564 informando sua cidade em Minas Gerais, o endereço e o tipo de entulho. Solicite seu orçamento pelo WhatsApp para confirmar a disponibilidade.",
+    a: "É muito simples! Entre em contato diretamente pelo WhatsApp informando seu bairro em Goiânia ou cidade da região metropolitana, o endereço e o tipo de entulho. Nossa equipe passará o orçamento rapidamente.",
   },
   {
     q: "Qual o valor da locação?",
-    a: "O valor é calculado de acordo com o tamanho da caçamba solicitada e a localização da entrega. Solicite um orçamento via WhatsApp para receber a cotação exata.",
+    a: "O valor é calculado de acordo com o tamanho da caçamba e a localização da entrega. Solicite um orçamento via WhatsApp para receber a cotação rápida e sem compromisso.",
   },
   {
     q: "Vocês trabalham aos finais de semana?",
-    a: "Nosso atendimento principal funciona de segunda a sábado. Agendamentos e entregas em horários especiais podem ser alinhados previamente com nossa equipe.",
+    a: `Nosso atendimento padrão funciona ${COMPANY_DATA.workingHours.toLowerCase()}. Agendamentos e entregas podem ser alinhados previamente com nossa equipe.`,
   },
   {
     q: "A caçamba pode ficar posicionada na rua?",
-    a: "Sim, a caçamba pode ser colocada na via pública desde que respeite o estacionamento permitido e as diretrizes de trânsito e sinalização da prefeitura local.",
+    a: "Sim, a caçamba pode ser colocada na via pública desde que respeite o estacionamento permitido e as diretrizes de trânsito e sinalização do município.",
   },
 ];
 
@@ -52,7 +53,7 @@ export default function FAQSection() {
             Dúvidas <span className="gradient-text">Frequentes</span>
           </h2>
           <p className="text-slate-400 text-lg">
-            Esclareça suas principais dúvidas sobre o aluguel de caçambas com a Diskentulho.
+            Esclareça suas principais dúvidas sobre o aluguel de caçambas com a JP Entulho em Goiânia.
           </p>
         </div>
 

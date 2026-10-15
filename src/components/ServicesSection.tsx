@@ -1,13 +1,12 @@
 import { ArrowRight, Hammer, Building2, TreePine, Paintbrush } from "lucide-react";
 import type { ComponentType } from "react";
 import { trackWhatsAppClick } from "../lib/analytics";
+import { getWhatsAppLink } from "../config/whatsapp";
 
 import imgObra from "../assets/service_obra.jpg";
 import imgComercial from "../assets/service_comercial.jpg";
 import imgTerreno from "../assets/service_terreno.jpg";
 import imgReforma from "../assets/service_reforma.jpg";
-
-const WA_LINK = "https://wa.me/5531972528564";
 
 type Service = {
   icon: ComponentType<{ className?: string }>;
@@ -21,34 +20,36 @@ const SERVICES: Service[] = [
   {
     icon: Hammer,
     image: imgObra,
-    title: "Entulho de Obra",
-    description: "Remoção de resíduos de construção, reformas e demolições. Tijolos, concreto, argamassa, cerâmica e mais.",
+    title: "Caçamba para Obra",
+    description: "Remoção de resíduos de construção civil, alvenaria e demolições em Goiânia. Tijolos, concreto, argamassa, cerâmica e mais.",
     items: ["Concreto e Argamassa", "Tijolos e Blocos", "Cerâmica e Azulejos", "Madeira e Ferragens"],
   },
   {
     icon: Building2,
     image: imgComercial,
     title: "Resíduos Comerciais",
-    description: "Soluções para empresas e comércios que precisam descartar grandes volumes de resíduos de forma organizada.",
+    description: "Soluções ágeis para empresas e comércios que precisam de descarte organizado e retirada de entulho em Goiânia.",
     items: ["Limpeza de Galpões", "Mudanças Comerciais", "Sobras Industriais", "Descarte Regular"],
   },
   {
     icon: TreePine,
     image: imgTerreno,
     title: "Limpeza de Terreno",
-    description: "Caçambas para limpeza de terrenos baldios, podas de árvores e remoção de vegetação em cidades de Minas Gerais.",
+    description: "Caçambas para limpeza de terrenos, podas de árvores e remoção de vegetação e entulhos em Goiânia e região metropolitana.",
     items: ["Podas e Galhos", "Terra e Pedras", "Vegetação Seca", "Limpeza Geral"],
   },
   {
     icon: Paintbrush,
     image: imgReforma,
-    title: "Reformas Residenciais",
-    description: "Caçambas ideais para reformas domésticas de qualquer porte. Praticidade e agilidade na entrega e recolhimento.",
+    title: "Caçamba para Reforma",
+    description: "Caçambas ideais para reformas residenciais de qualquer porte. Praticidade e rapidez na colocação e retirada.",
     items: ["Reformas de Cozinha", "Reformas de Banheiro", "Ampliações", "Demolições Parciais"],
   },
 ];
 
 export default function ServicesSection() {
+  const waLink = getWhatsAppLink();
+
   return (
     <section id="servicos" className="py-16 sm:py-20 md:py-28 bg-slate-900">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -60,7 +61,7 @@ export default function ServicesSection() {
             Aluguel de <span className="gradient-text">Caçambas</span> para Obras e Reformas
           </h2>
           <p className="text-slate-300 text-base sm:text-lg max-w-3xl mx-auto leading-relaxed">
-            Faça a locação de uma caçamba de entulho para sua obra, reforma, demolição ou limpeza. Trabalhamos com diferentes tamanhos de caçambas e atendemos clientes em cidades de Minas Gerais.
+            Faça a locação de caçamba em Goiânia para sua obra, reforma ou limpeza. Oferecemos caçamba de entulho em Goiânia com atendimento ágil, pontualidade e preço justo para você e sua construção.
           </p>
         </div>
 
@@ -109,14 +110,14 @@ export default function ServicesSection() {
           <div className="relative flex flex-col sm:flex-row items-center gap-6 sm:gap-8 text-center sm:text-left">
             <div className="flex-1">
               <h3 className="font-display font-bold text-xl sm:text-2xl md:text-3xl text-white mb-3">
-                Precisa de caçamba para sua obra em Minas Gerais?
+                Precisa de aluguel de caçamba em Goiânia?
               </h3>
               <p className="text-slate-300 text-base sm:text-lg">
-                Solicite seu orçamento pelo WhatsApp e consulte a disponibilidade para sua cidade.
+                Disk caçamba em Goiânia e região com atendimento rápido pelo WhatsApp. Solicite sua caçamba agora mesmo.
               </p>
             </div>
             <a
-              href={WA_LINK}
+              href={waLink}
               target="_blank"
               rel="noopener noreferrer"
               onClick={() => trackWhatsAppClick('services_section')}

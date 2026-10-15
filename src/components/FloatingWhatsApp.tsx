@@ -1,11 +1,12 @@
 import { trackWhatsAppClick } from "../lib/analytics";
-
-const WA_LINK = "https://wa.me/5531972528564?text=Ol%C3%A1!%20Gostaria%20de%20solicitar%20um%20or%C3%A7amento%20para%20loca%C3%A7%C3%A3o%20de%20ca%C3%A7amba.";
+import { getWhatsAppLink } from "../config/whatsapp";
 
 export default function FloatingWhatsApp() {
+  const waLink = getWhatsAppLink();
+
   return (
     <a
-      href={WA_LINK}
+      href={waLink}
       target="_blank"
       rel="noopener noreferrer"
       onClick={() => trackWhatsAppClick('floating_button')}

@@ -2,6 +2,7 @@ import { useState, useEffect } from "react";
 import { Menu, X, Phone } from "lucide-react";
 import Logo from "./Logo";
 import { trackWhatsAppClick } from "../lib/analytics";
+import { getWhatsAppLink } from "../config/whatsapp";
 
 const NAV_LINKS = [
   { label: "Início", href: "#inicio" },
@@ -12,8 +13,6 @@ const NAV_LINKS = [
   { label: "FAQ", href: "#faq" },
   { label: "Contato", href: "#contato" },
 ];
-
-const WA_LINK = "https://wa.me/5531972528564";
 
 export default function Navbar() {
   const [scrolled, setScrolled] = useState(false);
@@ -26,6 +25,7 @@ export default function Navbar() {
   }, []);
 
   const handleClick = () => setMobileOpen(false);
+  const waLink = getWhatsAppLink();
 
   return (
     <nav
@@ -55,7 +55,7 @@ export default function Navbar() {
 
           <div className="flex items-center gap-2 sm:gap-3">
             <a
-              href={WA_LINK}
+              href={waLink}
               target="_blank"
               rel="noopener noreferrer"
               onClick={() => trackWhatsAppClick('navbar_desktop')}
@@ -67,7 +67,7 @@ export default function Navbar() {
 
             {!scrolled && (
               <a
-                href={WA_LINK}
+                href={waLink}
                 target="_blank"
                 rel="noopener noreferrer"
                 onClick={() => trackWhatsAppClick('navbar_mobile')}
@@ -107,7 +107,7 @@ export default function Navbar() {
             </a>
           ))}
           <a
-            href={WA_LINK}
+            href={waLink}
             target="_blank"
             rel="noopener noreferrer"
             onClick={() => {

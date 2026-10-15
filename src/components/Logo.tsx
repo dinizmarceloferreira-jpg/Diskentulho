@@ -26,10 +26,10 @@ export default function Logo({ light = false, size = "md", className = "" }: Log
       </div>
       <div className="flex flex-col leading-none">
         <span className={light ? "text-white" : "text-slate-900"}>
-          DISK<span className="text-emerald-500">ENTULHO</span>
+          JP <span className="text-emerald-500">ENTULHO</span>
         </span>
         <span className="text-[9px] sm:text-[10px] tracking-widest uppercase font-semibold text-emerald-400 mt-0.5">
-          ITAÚNA • DESDE 1997
+          GOIÂNIA • GO
         </span>
       </div>
     </div>

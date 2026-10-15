@@ -1,9 +1,10 @@
 import { Award, Shield, MapPin, MessageSquare } from "lucide-react";
+import { COMPANY_DATA } from "../config/company";
 
 const STATS = [
-  { icon: Award, value: "29 Anos", label: "De Atuação no Mercado" },
-  { icon: Shield, value: "Empresa Regular", label: "CNPJ 01.766.086/0001-20" },
-  { icon: MapPin, value: "Minas Gerais", label: "Atendimento no Estado" },
+  { icon: Award, value: "Atendimento Rápido", label: "Goiânia e Região" },
+  { icon: Shield, value: "Empresa Regular", label: `CNPJ ${COMPANY_DATA.cnpj}` },
+  { icon: MapPin, value: "Goiânia - GO", label: "Sede & Região Atendida" },
   { icon: MessageSquare, value: "WhatsApp", label: "Solicite seu Orçamento" },
 ];
 
@@ -19,7 +20,7 @@ export default function TrustIndicators() {
             <div className="w-10 h-10 sm:w-12 sm:h-12 rounded-xl bg-emerald-950 border border-emerald-500/20 flex items-center justify-center mx-auto mb-3 sm:mb-4 group-hover:bg-emerald-900/50 transition-colors">
               <Icon className="w-5 h-5 sm:w-6 sm:h-6 text-emerald-400" />
             </div>
-            <span className="font-display font-extrabold text-xl sm:text-3xl md:text-4xl text-white tracking-tight">
+            <span className="font-display font-extrabold text-lg sm:text-2xl md:text-3xl text-white tracking-tight">
               {value}
             </span>
             <p className="text-slate-400 text-xs sm:text-sm font-medium mt-1.5 sm:mt-2">{label}</p>

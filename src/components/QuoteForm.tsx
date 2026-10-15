@@ -1,9 +1,8 @@
 import { useState, useRef, type ChangeEvent, type FormEvent } from "react";
 import { X, CheckCircle2, Send, ImageIcon, ShieldCheck } from "lucide-react";
 import { trackWhatsAppClick } from "../lib/analytics";
-
-const WA_NUMBER = "5531972528564";
-
+import { WHATSAPP_NUMBER } from "../config/whatsapp";
+import { COMPANY_DATA } from "../config/company";
 
 const TAMANHOS = ["3m³", "4m³", "5m³", "Não tenho certeza, preciso de recomendação"];
 
@@ -83,7 +82,7 @@ export default function QuoteForm() {
     const next: Record<string, string> = {};
     if (!form.nome.trim()) next.nome = "Informe seu nome completo.";
     if (!form.telefone.trim()) next.telefone = "Informe seu WhatsApp / telefone.";
-    if (!form.cidade.trim()) next.cidade = "Informe sua cidade em Minas Gerais.";
+    if (!form.cidade.trim()) next.cidade = "Informe sua cidade ou bairro (Goiânia e região).";
     if (!form.tamanho) next.tamanho = "Selecione o tamanho da caçamba.";
     if (!lgpd) next.lgpd = "É necessário aceitar os termos para envio do orçamento.";
     return next;
@@ -100,15 +99,15 @@ export default function QuoteForm() {
     }
 
     const lines = [
-      "Olá! Gostaria de solicitar um orçamento para aluguel de caçamba (Diskentulho).",
+      "Olá vim pelo site e preciso de uma caçamba em Goiânia",
       "",
       `*Nome:* ${form.nome.trim()}`,
       `*WhatsApp:* ${form.telefone.trim()}`,
-      `*Cidade:* ${form.cidade.trim()}`,
+      `*Cidade/Bairro:* ${form.cidade.trim()}`,
       `*Tamanho da Caçamba:* ${form.tamanho}`,
     ];
     if (form.tipo) lines.push(`*Tipo de Resíduo:* ${form.tipo}`);
-    if (form.endereco.trim()) lines.push(`*Endereço:* ${form.endereco.trim()}`);
+    if (form.endereco.trim()) lines.push(`*Endereço da Obra:* ${form.endereco.trim()}`);
     if (form.info.trim()) lines.push(`*Observação:* ${form.info.trim()}`);
     if (photoPreview) {
       lines.push("", "⚠️ Envie a foto do local/entulho em seguida nesta conversa.");
@@ -116,7 +115,7 @@ export default function QuoteForm() {
 
     const msg = encodeURIComponent(lines.join("\n"));
     trackWhatsAppClick('quote_form_submit');
-    window.open(`https://wa.me/${WA_NUMBER}?text=${msg}`, "_blank");
+    window.open(`https://wa.me/${WHATSAPP_NUMBER}?text=${msg}`, "_blank");
     setSubmitted(true);
   };
 
@@ -138,7 +137,7 @@ export default function QuoteForm() {
           Mensagem preparada no WhatsApp
         </h3>
         <p className="text-slate-300 text-sm sm:text-base leading-relaxed max-w-md mx-auto mb-6 sm:mb-7">
-          O WhatsApp foi aberto com seus dados preenchidos. Confira as informações e toque em enviar para concluir sua solicitação.
+          O WhatsApp foi aberto com os seus dados prontos para a equipe da JP Entulho em Goiânia. Toque em enviar no aplicativo para concluir sua cotação.
         </p>
         <button
           onClick={resetForm}
@@ -203,21 +202,21 @@ export default function QuoteForm() {
             value={form.telefone}
             onChange={set("telefone")}
             aria-invalid={!!errors.telefone}
-            placeholder="(31) 99999-9999"
+            placeholder="(62) 99999-9999"
             className={`${inputBase} ${errors.telefone ? "border-red-400" : "border-slate-800"}`}
           />
         </Field>
       </div>
 
       <div className="grid sm:grid-cols-2 gap-4 sm:gap-5">
-        <Field name="cidade" label="Cidade em Minas Gerais" required error={errors.cidade}>
+        <Field name="cidade" label="Cidade / Bairro (Goiânia e Região)" required error={errors.cidade}>
           <input
             id="cidade"
             type="text"
             value={form.cidade}
             onChange={set("cidade")}
             aria-invalid={!!errors.cidade}
-            placeholder="Ex: Itaúna, Pará de Minas, Betim..."
+            placeholder="Ex: Goiânia, Setor Bueno, Aparecida..."
             className={`${inputBase} ${errors.cidade ? "border-red-400" : "border-slate-800"}`}
           />
         </Field>
@@ -263,7 +262,7 @@ export default function QuoteForm() {
             type="text"
             value={form.endereco}
             onChange={set("endereco")}
-            placeholder="Rua, número ou ponto de referência (opcional)"
+            placeholder="Rua, quadra, lote ou ponto de referência"
             className={`${inputBase} border-slate-800`}
           />
         </Field>
@@ -275,7 +274,7 @@ export default function QuoteForm() {
           rows={2}
           value={form.info}
           onChange={set("info")}
-          placeholder="Algum detalhe adicional sobre o local, acesso do caminhão ou resíduos..."
+          placeholder="Algum detalhe sobre o local de estacionamento da caçamba ou resíduos..."
           className={`${inputBase} border-slate-800 resize-none`}
         />
       </Field>
@@ -341,7 +340,7 @@ export default function QuoteForm() {
           />
           <span className="text-xs sm:text-sm text-slate-400 leading-relaxed">
             Autorizo o tratamento dos meus dados pessoais conforme a{" "}
-            <span className="font-semibold text-slate-200">LGPD (Lei nº 13.709/2018)</span> para fins de contato e envio de orçamento pela Itauna Locacao de Equipamentos LTDA. *
+            <span className="font-semibold text-slate-200">LGPD (Lei nº 13.709/2018)</span> para fins de contato e envio de orçamento pela {COMPANY_DATA.legalName}. *
           </span>
         </label>
         {errors.lgpd && (
@@ -362,7 +361,7 @@ export default function QuoteForm() {
 
       <div className="flex items-center justify-center gap-2 text-[10px] sm:text-xs text-slate-400">
         <ShieldCheck className="w-3.5 h-3.5 sm:w-4 sm:h-4 text-emerald-400" />
-        Seus dados serão utilizados para atendimento e envio do orçamento.
+        Seus dados serão utilizados com sigilo para atendimento e envio do orçamento.
       </div>
     </form>
   );

@@ -1,16 +1,18 @@
 import { MapPin, Phone, Clock, ArrowRight } from "lucide-react";
 import QuoteForm from "./QuoteForm";
 import { trackWhatsAppClick } from "../lib/analytics";
-
-const WA_LINK = "https://wa.me/5531972528564";
-
-const CONTACT_INFO = [
-  { icon: Phone, label: "WhatsApp / Telefone", value: "(31) 97252-8564", href: "https://wa.me/5531972528564" },
-  { icon: MapPin, label: "Endereço Oficial", value: "Rua Manoel Ribeiro da Silva, 60 - João Paulo II, Itaúna - MG", href: null },
-  { icon: Clock, label: "Horário de Atendimento", value: "Seg a Sáb • 7h às 18h", href: null },
-];
+import { getWhatsAppLink, WHATSAPP_DISPLAY } from "../config/whatsapp";
+import { COMPANY_DATA } from "../config/company";
 
 export default function ContactSection() {
+  const waLink = getWhatsAppLink();
+
+  const CONTACT_INFO = [
+    { icon: Phone, label: "WhatsApp / Atendimento", value: WHATSAPP_DISPLAY, href: waLink },
+    { icon: MapPin, label: "Endereço Oficial", value: COMPANY_DATA.address.full, href: null },
+    { icon: Clock, label: "Horário de Atendimento", value: COMPANY_DATA.workingHours, href: null },
+  ];
+
   return (
     <section id="contato" className="py-16 sm:py-20 md:py-28 bg-slate-900">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -22,7 +24,7 @@ export default function ContactSection() {
             Solicite seu <span className="gradient-text">Orçamento</span>
           </h2>
           <p className="text-slate-400 text-base sm:text-lg max-w-2xl mx-auto">
-            Preencha o formulário abaixo para preparar sua mensagem no WhatsApp e consulte a disponibilidade para sua cidade.
+            Preencha o formulário para preparar sua mensagem no WhatsApp e solicite atendimento rápido com a JP Entulho em Goiânia e região.
           </p>
         </div>
 
@@ -57,7 +59,7 @@ export default function ContactSection() {
             ))}
 
             <a
-              href={WA_LINK}
+              href={waLink}
               target="_blank"
               rel="noopener noreferrer"
               onClick={() => trackWhatsAppClick('contact_section_direct')}
