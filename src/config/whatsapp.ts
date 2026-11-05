@@ -1,8 +1,7 @@
 // Configuração centralizada do WhatsApp para a Disk Caçamba Goiás
-// Quando o novo número oficial DDD 62 estiver disponível, altere apenas WHATSAPP_NUMBER e WHATSAPP_DISPLAY aqui.
 
-export const WHATSAPP_NUMBER = "5531972528564";
-export const WHATSAPP_DISPLAY = "(31) 97252-8564";
+export const WHATSAPP_NUMBER = "556296625818";
+export const WHATSAPP_DISPLAY = "(62) 9662-5818";
 export const DEFAULT_WHATSAPP_MESSAGE = "Olá vim pelo site e preciso de uma caçamba em Goiânia";
 
 /**
