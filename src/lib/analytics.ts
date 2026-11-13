@@ -11,7 +11,9 @@ export function trackWhatsAppClick(location: string) {
   if (typeof window !== 'undefined' && 'gtag' in window) {
     // @ts-ignore
     window.gtag('event', 'conversion', {
-      send_to: 'AW-18226966667/AdFMCImG-uMcEIvhpfND',
+      send_to: 'AW-18525819009/MW3KCNbk5KIdEIGh5oFF',
+      value: 1.0,
+      currency: 'BRL',
       event_category: 'engagement',
       event_label: location,
     });

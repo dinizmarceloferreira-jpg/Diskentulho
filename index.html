@@ -2,13 +2,29 @@
 <html lang="pt-BR">
   <head>
     <!-- Google tag (gtag.js) -->
-    <script async src="https://www.googletagmanager.com/gtag/js?id=AW-18226966667"></script>
+    <script async src="https://www.googletagmanager.com/gtag/js?id=AW-18525819009"></script>
     <script>
       window.dataLayer = window.dataLayer || [];
       function gtag(){dataLayer.push(arguments);}
       gtag('js', new Date());
 
-      gtag('config', 'AW-18226966667');
+      gtag('config', 'AW-18525819009');
+    </script>
+    <script>
+      function gtag_report_conversion(url) {
+        var callback = function () {
+          if (typeof(url) != 'undefined') {
+            window.location = url;
+          }
+        };
+        gtag('event', 'conversion', {
+            'send_to': 'AW-18525819009/MW3KCNbk5KIdEIGh5oFF',
+            'value': 1.0,
+            'currency': 'BRL',
+            'event_callback': callback
+        });
+        return false;
+      }
     </script>
 
     <meta charset="UTF-8" />
